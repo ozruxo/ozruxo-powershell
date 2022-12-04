@@ -28,7 +28,7 @@ function Get-AudioShareFilesStatus {
 
         if ($Delete){
         
-            $Input = Read-Host "ROBOT: Are you sure you want me to delete what I log?"
+            $UserInput = Read-Host "ROBOT: Are you sure you want me to delete what I log?"
             Do {
             switch ($Input) {
 
@@ -49,10 +49,10 @@ function Get-AudioShareFilesStatus {
                         $Delete = $false
                         }
                 Default {
-                        $Input = Read-Host "ROBOT: wut?"
+                        $UserInput = Read-Host "ROBOT: wut?"
                         }
             }
-            }until ($Input -eq 'Y' -or $Input -eq 'N' -or $Input -eq 'Yes' -or $Input -eq 'No')
+            }until ($UserInput -eq 'Y' -or $UserInput -eq 'N' -or $UserInput -eq 'Yes' -or $UserInput -eq 'No')
 
         }
     
