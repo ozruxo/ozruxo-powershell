@@ -1,2 +1,2 @@
 # ozruxo-powershell
-PowerShell script
+PowerShell scripts
