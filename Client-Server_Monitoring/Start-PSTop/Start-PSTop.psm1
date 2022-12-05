@@ -8,7 +8,7 @@ function Start-PSTop {
 
     #region FUNCTION
 
-        Function GetProcProgress ($Global:InProcSwitch, $Global:sytle){
+        Function GetProcProgress {
         
             if ($PSVersionTable.PSVersion.Major -ge 7){
 
@@ -24,16 +24,16 @@ function Start-PSTop {
                      {$_ -ge 36 -and $_ -le 40} {(($style.fg.rgb -f 0,190,100), '||||||||            ', $Style.default)}
                      {$_ -ge 41 -and $_ -le 45} {(($style.fg.rgb -f 0,190,100), '|||||||||           ', $Style.default)}
                      {$_ -ge 46 -and $_ -le 50} {(($style.fg.rgb -f 0,190,100), '||||||||||          ', $Style.default)} #10
-                     {$_ -ge 51 -and $_ -le 55} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '|         ', $Style.default -join "")}
-                     {$_ -ge 56 -and $_ -le 60} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '||        ', $Style.default -join "")}
-                     {$_ -ge 61 -and $_ -le 65} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '|||       ', $Style.default -join "")}
-                     {$_ -ge 66 -and $_ -le 70} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '||||      ', $Style.default -join "")}
-                     {$_ -ge 71 -and $_ -le 75} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '|||||     ', $Style.default -join "")}
-                     {$_ -ge 76 -and $_ -le 80} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'|    ', $Style.default -join "")}
-                     {$_ -ge 81 -and $_ -le 85} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'||   ', $Style.default -join "")}
-                     {$_ -ge 86 -and $_ -le 90} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'|||  ', $Style.default -join "")}
-                     {$_ -ge 91 -and $_ -le 95} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'|||| ', $Style.default -join "")}
-                    {$_ -ge 96 -and $_ -le 100} {(($style.fg.rgb -f 0,190,100), '||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'|||||', $Style.default -join "")} #20
+                     {$_ -ge 51 -and $_ -le 55} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '|         ', $Style.default -join "")}
+                     {$_ -ge 56 -and $_ -le 60} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '||        ', $Style.default -join "")}
+                     {$_ -ge 61 -and $_ -le 65} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '|||       ', $Style.default -join "")}
+                     {$_ -ge 66 -and $_ -le 70} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '||||      ', $Style.default -join "")}
+                     {$_ -ge 71 -and $_ -le 75} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '|||||     ', $Style.default -join "")}
+                     {$_ -ge 76 -and $_ -le 80} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'|    ', $Style.default -join "")}
+                     {$_ -ge 81 -and $_ -le 85} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'||   ', $Style.default -join "")}
+                     {$_ -ge 86 -and $_ -le 90} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'|||  ', $Style.default -join "")}
+                     {$_ -ge 91 -and $_ -le 95} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'|||| ', $Style.default -join "")}
+                    {$_ -ge 96 -and $_ -le 100} {(($style.fg.rgb -f 0,190,100), ' ||||||||||', ($style.fg.rgb -f 255,234,127), '|||||', ($style.fg.rgb -f 255,70,85),'|||||', $Style.default -join "")} #20
                     Default {'Error'}
                 }
             }
@@ -66,7 +66,7 @@ function Start-PSTop {
             }
         }
 
-        Function GetMemProgress ($Global:InMemSwitch, $Global:sytle){
+        Function GetMemProgress {
         
             if ($PSVersionTable.PSVersion.Major -ge 7){
 
