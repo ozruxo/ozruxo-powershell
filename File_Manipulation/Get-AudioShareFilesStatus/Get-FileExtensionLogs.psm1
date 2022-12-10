@@ -43,7 +43,7 @@
 
 #>
 
-function Get-AudioShareFilesStatus {
+function Get-FileExtensionLogs {
 
     param(
     
