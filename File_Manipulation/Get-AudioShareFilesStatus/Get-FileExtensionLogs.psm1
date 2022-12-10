@@ -1,4 +1,46 @@
 <#
+
+.SYNOPSIS
+	Script to allow for logging file extension and removing any file extensions that are logged.
+
+.DESCRIPTION
+
+    PARAMETER(S)
+    -DefaultLogging
+        This switch will allow for logging all files that do not match the defualt files to ignore. This cannot be used with parameter LogAllFiles.
+    
+    -Delete
+        This switch will delete any file(s) that are being logged.
+        
+    -IgnoreDefaultFiles
+        This switch is to allow for referencing the deault ignore list in the script. This option can be paired with parameter IgnoreSpecificFileExtension which will be added to the list of file extensions to ignore.
+
+    -IgnoreSpecificFileExtensions
+        This string array allows for specifying additional files extensions to ignore.
+
+    -LogAllFiles
+        This switch is to allow for logging all files extensions.
+
+    -LoggingPath
+        This string logs defaultly to the desktop in a folder names ExtensionLogs. This parameter allows for specifying a different directory.
+
+    -LogSpecificFileExtensions
+        This sting array allows for logging file extension specified only.
+
+    -SourceFolderPath
+        This sting parameter allow for setting a default directory location or specifying what directory to log.
+
+.EXAMPLE
+    Get-FileExtensionLogs -DefaultLogging
+
+.EXAMPLE
+    Get-FileExtensionLogs -LogAllFiles
+
+.EXAMPLE
+    Get-FileExtensionLogs -LogSpecificFileExtenstions -Delete
+
+.NOTES
+
 #>
 
 function Get-AudioShareFilesStatus {
@@ -10,9 +52,9 @@ function Get-AudioShareFilesStatus {
         [switch]$IgnoreDefaultFiles,
         [string[]]$IgnoreSpecificFileExtensions,
         [switch]$LogAllFiles,
-        [string]$LoggingPath="$env:USERPROFILE\Desktop\AudioCleanUp\",
+        [string]$LoggingPath="$env:USERPROFILE\Desktop\ExtensionLogs\",
         [string[]]$LogSpecificFileExtentions,
-        [string]$SourceAudioPath="\\<Path to>\<Share>"
+        [string]$SourceFolderPath="\\<Path to>\<Share>"
     )
 
     #region INITIAL VARIABLES AND CHECKS
