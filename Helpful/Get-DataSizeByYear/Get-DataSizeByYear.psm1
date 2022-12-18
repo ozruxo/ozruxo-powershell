@@ -1,4 +1,24 @@
-# Get-AccumulatedShareSizeByYear
+<#
+
+.SYNOPSIS
+	Determine how much data was created in a specific year
+
+.DESCRIPTION
+    Dertermine what data has been last writen to within a specific year.
+
+    PARAMETER(S)
+    -Path
+        Enter the path in which you would like to check.
+
+    -Year
+        Specify the the in which you would like to match.
+
+.EXAMPLE
+    Get-DataSizeByYear .\ -Year 2022
+
+.NOTES
+
+#>
 
 function Get-DataSizeByYear{
 
