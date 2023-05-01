@@ -14,23 +14,23 @@ else{
 
     # Download
     Invoke-WebRequest -Uri "https://aka.ms/downloadazcopy-v10-windows" `
-            -OutFile C:\AzCopy\bin\AzCopy.zip `
+            -OutFile C:\AzCopy\AzCopy.zip `
             -UseBasicParsing
     
-    if(Test-Path "C:\AzCopy\bin\AzCopy.zip" ){
+    if(Test-Path "C:\AzCopy\AzCopy.zip" ){
 
         # Remove current AzCopy
-        Remove-Item -Path C:\AzCopy\bin\azcopy.exe
+        Remove-Item -Path C:\AzCopy\azcopy.exe
 
         # Expand archive of downloaded file
-        Expand-Archive C:\AzCopy\bin\AzCopy.zip C:\AzCopy\bin\AzCopy -Force
+        Expand-Archive C:\AzCopy\AzCopy.zip C:\AzCopy\AzCopy -Force
     
         # Move to correct location
-        Get-ChildItem C:\AzCopy\bin\AzCopy\*\azcopy.exe | Move-Item -Destination "C:\AzCopy\bin\AzCopy.exe"
+        Get-ChildItem C:\AzCopy\AzCopy\*\azcopy.exe | Move-Item -Destination "C:\AzCopy\AzCopy.exe"
     
         # Clean up
-        Remove-Item -Path C:\AzCopy\bin\AzCopy.zip -Force
-        Remove-Item -Path C:\AzCopy\bin\AzCopy -Recurse -Force
+        Remove-Item -Path C:\AzCopy\AzCopy.zip -Force
+        Remove-Item -Path C:\AzCopy\AzCopy -Recurse -Force
     }
     else{
     
