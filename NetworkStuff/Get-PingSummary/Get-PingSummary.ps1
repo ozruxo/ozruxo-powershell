@@ -1,10 +1,10 @@
 <#
 
 .SYNOPSIS
-	Summarize the 
+	This script creates a custom summary of a ping command. 
 
 .DESCRIPTION
-    The intention of this script was to assist with finding lines in a script I know I used, but don't exactly remember what script I was working in and what was typed.
+    This script creates a custom summary of a ping command. This was created to review the summary of the output over long periods of time.
 
 .NOTES
     Intended for PowerShell 5.1
