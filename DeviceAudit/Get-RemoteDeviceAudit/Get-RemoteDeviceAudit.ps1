@@ -15,16 +15,16 @@
     Prompts for you to provide a directory location of where the files are located to create a Excel from. Name of the folder with the CSV files should match the name ComputerName paramter. Input of directory path will just be the path to the folder with name matching the ComputerName parameter.
             
 .EXAMPLE
-    Get-FullSysemAuditRemote -ComputerNames <ComputerName>
+    Get-RemoteDeviceAudit -ComputerNames <ComputerName>
 
 .EXAMPLE
-    Get-FullSystemAuditRemote -ComputerNames <ComputerName>, <ComputerName>
+    Get-RemoteDeviceAudit -ComputerNames <ComputerName>, <ComputerName>
 
 .EXAMPLE
-    Get-FullSystemAuditRemote -ComputerNames <ComputerName> -CreateCSVOnly
+    Get-RemoteDeviceAudit -ComputerNames <ComputerName> -CreateCSVOnly
 
 .EXAMPLE
-    Get-FullSystemAuditRemote -ComputerNames <ComputerName> -CreateExcelFromCSVOnly
+    Get-RemoteDeviceAudit -ComputerNames <ComputerName> -CreateExcelFromCSVOnly
 
 .NOTES
     Should re-write the network portion insteading of silencing errors
@@ -33,7 +33,7 @@
     I was lazy with some additions
 #>
 
-#function Get-FullSystemAuditRemote {
+#function Get-RemoteDeviceAudit {
 
     param(
 
