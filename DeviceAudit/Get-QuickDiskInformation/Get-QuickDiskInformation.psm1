@@ -1,20 +1,18 @@
 <#
-
 .SYNOPSIS
     Formated basic hard drive information from Win32_LogicalDisk.
 
 .DESCRIPTION
     Formated basic hard drive information from Win32_LogicalDisk. Purpose of build: allows for running against multiple computers.
 
-    PARAMETER(s)
-    -ComputerName
-        Add the name of the computer(s).
+.PARAMETER ComputerName
+    Add the name of the computer(s).
 
 .EXAMPLE
     Get-QucikDiskInformation -ComputerName <NameOfComputer>
 
 .NOTES
-
+    Any improvements welcome.
 #>
 
 function Get-QuickDiskInformation {
