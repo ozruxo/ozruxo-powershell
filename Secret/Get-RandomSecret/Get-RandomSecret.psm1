@@ -94,7 +94,7 @@ function Get-RandomSecret {
                 }
             }until($valid -eq $true)
         
-            Write-Verbose "$Domain : Created secret"
+            Write-Verbose "Created secret"
             
             #return the value
             return $Secret
