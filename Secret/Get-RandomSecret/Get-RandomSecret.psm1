@@ -37,7 +37,6 @@
 
 .NOTES
     Any improvements welcome.
-
 #>
 
 function Get-RandomSecret {

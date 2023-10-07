@@ -1,34 +1,33 @@
 <#
-
 .SYNOPSIS
 	Script to allow for logging file extension and removing any file extensions that are logged.
 
 .DESCRIPTION
+    Script to allow for logging file extension and removing any file extensions that are logged.
 
-    PARAMETER(S)
-    -DefaultLogging
-        This switch will allow for logging all files that do not match the defualt files to ignore. This cannot be used with parameter LogAllFiles.
+.PARAMETER DefaultLogging
+    This switch will allow for logging all files that do not match the defualt files to ignore. This cannot be used with parameter LogAllFiles.
     
-    -Delete
-        This switch will delete any file(s) that are being logged.
+.PARAMETER Delete
+    This switch will delete any file(s) that are being logged.
         
-    -IgnoreDefaultFiles
-        This switch is to allow for referencing the deault ignore list in the script. This option can be paired with parameter IgnoreSpecificFileExtension which will be added to the list of file extensions to ignore.
+.PARAMETER IgnoreDefaultFiles
+    This switch is to allow for referencing the deault ignore list in the script. This option can be paired with parameter IgnoreSpecificFileExtension which will be added to the list of file extensions to ignore.
 
-    -IgnoreSpecificFileExtensions
-        This string array allows for specifying additional files extensions to ignore.
+.PARAMETER IgnoreSpecificFileExtensions
+    This string array allows for specifying additional files extensions to ignore.
 
-    -LogAllFiles
-        This switch is to allow for logging all files extensions.
+.PARAMETER LogAllFiles
+    This switch is to allow for logging all files extensions.
 
-    -LoggingPath
-        This string logs defaultly to the desktop in a folder names ExtensionLogs. This parameter allows for specifying a different directory.
+.PARAMETER LoggingPath
+    This string logs defaultly to the desktop in a folder names ExtensionLogs. This parameter allows for specifying a different directory.
 
-    -LogSpecificFileExtensions
-        This sting array allows for logging file extension specified only.
+.PARAMETER LogSpecificFileExtensions
+    This sting array allows for logging file extension specified only.
 
-    -SourceFolderPath
-        This sting parameter allow for setting a default directory location or specifying what directory to log.
+.PARAMETER SourceFolderPath
+    This sting parameter allow for setting a default directory location or specifying what directory to log.
 
 .EXAMPLE
     Get-FileExtensionLogs -DefaultLogging
@@ -40,7 +39,7 @@
     Get-FileExtensionLogs -LogSpecificFileExtenstions -Delete
 
 .NOTES
-
+    Any improvements welcome.
 #>
 
 function Get-FileExtensionLogs {

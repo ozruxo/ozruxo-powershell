@@ -1,5 +1,4 @@
 <#
-
 .SYNOPSIS
 	This script creates a custom summary of a ping command. 
 

@@ -6,27 +6,26 @@
 .DESCRIPTION
     Print the size of a folder in measurements.
 
-    PARAMETER(S)
-    -Path
-        Enter the path in which you would like to have measured.
+.PARAMETER Path
+    Enter the path in which you would like to have measured.
 
-    -TB
-        Specify this switch to get the specified measurement.
+.PARAMETER TB
+    Specify this switch to get the specified measurement.
     
-    -GB
-        Specify this switch to get the specified measurement.
+.PARAMETER GB
+    Specify this switch to get the specified measurement.
     
-    -MB
-        Specify this switch to get the specified measurement.
+.PARAMETER MB
+    Specify this switch to get the specified measurement.
     
-    -KB
-        Specify this switch to get the specified measurement.
+.PARAMETER KB
+    Specify this switch to get the specified measurement.
     
-    -Bytes
-        Specify this switch to get the specified measurement.
+.PARAMETER Bytes
+    Specify this switch to get the specified measurement.
     
-    -Bits
-        Specify this switch to get the specified measurement.
+.PARAMETER Bits
+    Specify this switch to get the specified measurement.
 
 .EXAMPLE
     Get-FolderSize .\
@@ -35,7 +34,7 @@
     Get-FolderSize -Path C:\test -KB
 
 .NOTES
-
+    Any improvements welcome.
 #>
 
 Function Get-FolderSize {
