@@ -5,13 +5,13 @@
 .DESCRIPTION
     Get detailed information from any remote computer.
 
-.PARAMETERS ComputerNames
-		Place hostname(s) of computer(s).
+.PARAMETER ComputerNames
+	Place hostname(s) of computer(s).
 
-.PARAMETERS CreateCSVOnly
+.PARAMETER CreateCSVOnly
     Creates a directory on the root of your drive (C:\TMP\<ComputerName>) and copies over the CSV that were created on the remote computer.
 
-.PARAMETERS CreateExcelFromCSVOnly
+.PARAMETER CreateExcelFromCSVOnly
     Prompts for you to provide a directory location of where the files are located to create a Excel from. Name of the folder with the CSV files should match the name ComputerName paramter. Input of directory path will just be the path to the folder with name matching the ComputerName parameter.
             
 .EXAMPLE
