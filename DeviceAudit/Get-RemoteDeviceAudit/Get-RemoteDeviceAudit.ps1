@@ -29,7 +29,7 @@
 .NOTES
     Should re-write the network portion insteading of silencing errors
     Should include more error handling/output
-    [scriptblock]::Create() - This would allow for running script against the computer executing the script. Plus some additional modifications.
+    [scriptblock]::Create(). Should probably allow script to run against self
     I was lazy with some additions
 #>
 
