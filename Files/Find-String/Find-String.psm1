@@ -6,12 +6,11 @@
 .DESCRIPTION
     The intention of this script was to assist with finding lines in a script I know I used, but don't exactly remember what script I was working in and what was typed.
 
-    PARAMETER(S)
-    -String
-        Type the string that you are looking for. Note, this module is using match and not equal or like.
+.PARAMETER String
+    Type the string that you are looking for. Note, this module is using match and not equal or like.
     
-    -Path
-        Enter in the path to the directory in which you want to search for a string in files that can be opened with Get-Content. Or leave it to the default you have set.
+.PARAMETER Path
+    Enter in the path to the directory in which you want to search for a string in files that can be opened with Get-Content. Or leave it to the default you have set.
 
 .EXAMPLE
     Find-String -String Computers
@@ -20,7 +19,7 @@
     Find-String -String Computers -Path "C:\scripts"
 
 .NOTES
-
+    Might only be working for OneDrive at the moment
 #>
 
 function Find-String {
