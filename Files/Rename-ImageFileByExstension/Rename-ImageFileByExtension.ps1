@@ -1,5 +1,30 @@
 <#
+.SYNOPSIS
+	Rename all files with the same extension to the same name.
 
+.DESCRIPTION
+    Rename all files with the same extension to the same name. This is intended for files in different directories.
+
+.PARAMETER Extension
+    Specify the extension.
+    
+.PARAMETER Log
+    Specify if logging is enabled.
+        
+.PARAMETER LogPath
+    Specify the path the logs should go if default is not desired. Default location is C:\logs.
+
+.PARAMETER NewFileName
+    Specify the name all files will be changed too.
+
+.PARAMETER Path
+    Specify the path to search for all files.
+
+.EXAMPLE
+    Rename-ImageFileByExtension -Extension .jpg -Log -NewFileName "Album_Art" -Path $env:USERPROFILE\Music
+
+.NOTES
+    Any improvements welcome.
 #>
 
 function Rename-ImageFileByExtension {
