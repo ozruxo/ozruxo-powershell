@@ -68,6 +68,7 @@ function Rename-ImageFileByExtension {
                     if ($Item.Name -ne $NewName){
                         
                         Write-Output "`0"
+                        Write-Host -ForegroundColor Green "$($Item.FullName)"
                         Write-Host -ForegroundColor Green "Attempting to Change $($Item.Name) to $NName$($Item.Extension)"
                         Rename-Item -Path $Item.FullName -NewName $NewName -Force -ErrorVariable NoRename -ErrorAction SilentlyContinue
                         if($NoRename){
