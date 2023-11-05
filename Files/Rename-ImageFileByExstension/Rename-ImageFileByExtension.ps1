@@ -54,33 +54,44 @@ function Rename-ImageFileByExtension {
 
             param(
                 [Array[]]$InputArray,
-                [String]$Ext
+                [String]$Ext,
+                [String]$NName
             )
 
             foreach ($Item in $InputArray){
 
-                # if there is only one file,rename
-                if ((Get-ChildItem $Item.Directory | Where-Object {$PSItem.Extension -eq $Ext}).Count -eq 1){
+                # if there is only one file, rename
+                if ((Get-ChildItem $Item.DirectoryName | Where-Object {$PSItem.Extension -eq $Ext}).Count -eq 1){
 
-                    if ($Item.Name -ne $NewFileName){
+                    $NewName = $NName + $Item.Extension
+
+                    if ($Item.Name -ne $NewName){
                         
                         Write-Output "`0"
-                        Write-Host -ForegroundColor Green "Attempting to Change $($Item.Name) to $NewFileName$($Item.Extension)"
-                        Write-Output "`0"
-                        Rename-Item -Path $Item.FullName -NewName '$NewFileName'+ "$($item.Extension)" -Force -ErrorVariable NoRename -ErrorAction SilentlyContinue
+                        Write-Host -ForegroundColor Green "Attempting to Change $($Item.Name) to $NName$($Item.Extension)"
+                        Rename-Item -Path $Item.FullName -NewName $NewName -Force -ErrorVariable NoRename -ErrorAction SilentlyContinue
                         if($NoRename){
                         
                             Write-Warning "Unable to rename file: $($Item.FullName)"
                         }
+                        
+                        $TestChange = Test-Path -Path ($Item.DirectoryName + "\$NewName")
+                        if ($TestChange -eq $true){
+                        
+                            Write-Host "Changed Succeeded"
+                            Write-Output "`0"
+                        }
+                        else {"what"}
                     }
                     else{
                     
+                        Write-Host -ForegroundColor Yellow "$($Item.FullName)"
                         Write-Host -ForegroundColor Yellow "No need to change name. Currently: $($Item.Name)"
                     }
                 }
                 else {
                 
-                    Write-Host -ForegroundColor Cyan "Skipping $($Item.Name) in Folder $($Item.Directory)"
+                    Write-Host -ForegroundColor Cyan "Skipping $($Item.Name) in Folder $($Item.DirectoryName)"
                     Continue
                 }
             }
@@ -108,7 +119,7 @@ function Rename-ImageFileByExtension {
         Write-Output "`0"
         $Files = Get-ChildItem "$Path\*" -Recurse | Where-Object {$PSItem.Extension -eq $Extension}
 
-        Set-Change -InputArray $Files -Ext $Extension
+        Set-Change -InputArray $Files -Ext $Extension -NName $NewFileName
 
         if ($Log){
         
