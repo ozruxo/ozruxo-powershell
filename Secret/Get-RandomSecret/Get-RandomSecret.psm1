@@ -108,7 +108,7 @@ function Get-RandomSecret {
                 $CallAPI = [System.Collections.ArrayList]::New()
 
                 # List of APIs
-                $APIs = 'adjective','adverb','anime','color','conjunction','month','noun','number','space','verb'
+                $APIs = 'adjective','adverb','anime','color','conjunction','month','noun','number','space','verb','strangedictionary','instrument'
 
                 # Determine number of APIs to call
                 Switch ($ObjectCount) {
