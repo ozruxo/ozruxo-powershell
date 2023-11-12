@@ -20,6 +20,9 @@
 .PARAMETER Spaces
     (Set 2) Specify if spaces should be included in the output of the string.
 
+.PARAMETER Easy
+    Combine both sets to make a complex password.
+
 .EXAMPLE
     Get-RandomSecret -RandomString
 
@@ -34,6 +37,9 @@
 
 .EXAMPLE
     Get-RandomSecret -RandomObjects -Verbose
+
+.EXAMPLE
+    Get-RandomSecret -Easy
 
 .NOTES
     Any improvements welcome.
@@ -54,7 +60,10 @@ function Get-RandomSecret {
         [Switch]$RandomObjects,
         [Parameter(ParameterSetName='Words')]
         [ValidateSet("Yes","No")]
-        [String]$Spaces="Yes"
+        [String]$Spaces="Yes",
+
+        [Parameter(ParameterSetName='Easy')]
+        [Switch]$Easy
     )
 
     #region INITIAL VARIABLES
@@ -211,6 +220,17 @@ function Get-RandomSecret {
         if($RandomObjects){
 
             Get-Objects
+        }
+        if ($Easy){
+
+            $SecretLength = 4
+            $ObjectCount = 2
+            $Spaces = 'No'
+            $One = Get-RandomCharacters
+            $Two = Get-Objects
+            Write-Output "`0"
+            $One + $Two
+            Write-Output "`0"
         }
 
     #endregion
