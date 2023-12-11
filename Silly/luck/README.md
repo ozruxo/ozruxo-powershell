@@ -6,4 +6,4 @@ Why use this script? Well, cause PowerShell is the superior scripting language.
 Good luck?
 
 Crappy gif of script
-![Alt Text](https://github.com/ozruxo/powershell/tree/main/Silly/luck/gif/lucky.gif)
+![Alt Text](https://github.com/ozruxo/powershell/blob/main/Silly/luck/gif/lucky.gif)
