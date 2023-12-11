@@ -4,3 +4,6 @@ You feeling lucky? Want to test that luck with some numbers generated from a scr
 Why use this script? Well, cause PowerShell is the superior scripting language.
 
 Good luck?
+
+Crappy gif of script
+![Alt Text](https://github.com/ozruxo/powershell/tree/main/Silly/luck/gif/lucky.gif)
