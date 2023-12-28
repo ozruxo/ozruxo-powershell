@@ -157,6 +157,7 @@ function AmIFeelingLucky {
         Write-Host -ForegroundColor Blue -NoNewline "`rROBOT: I get a portion of your winnings, right? "
         Start-Sleep -Seconds 3
         Write-Host -ForegroundColor Blue -NoNewline "`rBoop boop Beep Bop                              "
+        Start-Sleep -Seconds 1
         Write-Host -NoNewline "`rYour numbers madam/sir:                              "
         Write-Host "`n"
         Write-Host "$($MyLuckyNumbers[0].Split('.')[0]) $($MyLuckyNumbers[1].Split('.')[0]) $($MyLuckyNumbers[2].Split('.')[0]) $($MyLuckyNumbers[3].Split('.')[0]) $($MyLuckyNumbers[4].Split('.')[0]) $($PSStyle.Foreground.BrightRed)$($thisIsTheDay.Split('.')[0]) $($PSStyle.Reset)"
