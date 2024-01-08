@@ -98,7 +98,7 @@ function Get-FileExtensionLogs {
         }
     
         $AllFiles = @()
-        $Date = Get-Date -Format yyyyMMdd-hh-mm-ss
+        $Date = Get-Date -Format yyyy-MM-dd_hh-mm-ss
     
         if (-not $LogAllFiles -and $DefaultLogging){
 
@@ -174,7 +174,7 @@ function Get-FileExtensionLogs {
         Write-Host "ROBOT: Getting files..."
 
         # Get all files from audio path (ignore folders)
-        $AllFiles = Get-ChildItem $SourceAudioPath -Recurse | Where-Object {$PSItem.mode -eq '------'}
+        $AllFiles = Get-ChildItem $SourceFolderPath -Recurse | Where-Object {$PSItem.mode -eq '------'}
 
         Write-Host "ROBOT: Files acquired"
         if ($Delete){
@@ -193,7 +193,7 @@ function Get-FileExtensionLogs {
             $FileExtension  = $FileBreak[$FileBreakCount - 1]
 
             #Check all files and print/log what is not on the files to ignorelist
-            if ($DefaultLogging){
+            if ($FilesToIgnore){
 
                 $Integer = 0
 
@@ -258,7 +258,7 @@ function Get-FileExtensionLogs {
         Write-Host "ROBOT: Silly"
         if($Delete -eq $true){
         
-            Write-Host "ROBOT: Oh, by the way. I deleted your shitty files"
+            Write-Host "ROBOT: Oh, by the way. I deleted your files"
         }
     #endregion
 }
