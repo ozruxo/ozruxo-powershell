@@ -24,7 +24,7 @@ function Find-String {
 
     param(
         [String]$String,
-        [String]$Path="C:\Users\v-goanth\OneDrive - Microsoft\Powershell\"
+        [String]$Path="$env:USERPROFILE"
     )
 
     $items = Get-ChildItem $Path -Recurse
