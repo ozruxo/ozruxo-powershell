@@ -1,55 +1,56 @@
 <#
+
 .SYNOPSIS
-	Find the commandlet you forgot you used in previous scripts
+	Find a string of characters in a directory of files
 
 .DESCRIPTION
-    The intention of this script was to assist with finding lines in a script I know I used, but don't exactly remember what script I was working in and what was typed.
+    Find a string of characters in a directory of files. When you forget a cmdlet of something you did previously, but vaguely remember what is was you were working on.
 
 .PARAMETER String
-    Type the string that you are looking for. Note, this module is using match and not equal or like.
-    
+    Type the string you are looking for. That includes integers.
+
 .PARAMETER Path
-    Enter in the path to the directory in which you want to search for a string in files that can be opened with Get-Content. Or leave it to the default you have set.
+    Type the path of files you would like to search.
 
 .EXAMPLE
-    Find-String -String Computers
+    Find-String 'arraylist'
 
 .EXAMPLE
-    Find-String -String Computers -Path "C:\scripts"
+    Find-VM -String "nullorwhitespace"
 
-.NOTES
-    Might only be working for OneDrive at the moment
 #>
 
 function Find-String {
 
     param(
-    [string]$String,
-    [string]$Path='c:\<Path>\<of>\<directory>'
+        [String]$String,
+        [String]$Path="C:\Users\v-goanth\OneDrive - Microsoft\Powershell\"
     )
 
-    begin{
-        
-        $Items = Get-ChildItem $Path -Recurse
-    }
+    $items = Get-ChildItem $Path -Recurse
 
-    process {
-    
-        foreach($Item in $Items){
+    foreach($Item in $Items){
 
-            if($Item.mode -eq '-a---l'){
-    
-                $Contents = Get-Content $Item.Fullname
+        if($Item.Attributes -notlike "Directory*" -and $Item.Attributes -notmatch "\d"){
+
+            if ($Item.Extension -eq '.zip'){
+            
+                continue
+            }
+            else{
+
+                $contents = Get-Content $Item.Fullname
                 foreach($Line in $Contents) {
-        
-                     if ($Line -match $String){
-         
-                        Write-Host "`0"
-                        Write-host -ForegroundColor Yellow "$($Item.FullName)"
-                        $Line
-                     }
+    
+                    if ($Line -match "$String"){
+    
+                    Write-Host "`0"
+                    Write-host -ForegroundColor DarkGray "$($Item.FullName)"
+                    Write-Host $PSStyle.Foreground.BrightWhite, $Line.Trim(), $PSStyle.Reset
+                    }
                 }
             }
         }
     }
+    Write-Host "`0"
 }
