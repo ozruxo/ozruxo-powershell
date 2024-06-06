@@ -12,8 +12,6 @@ function Fix-MyMistakes {
     
         $Miliseconds = 1000
     }
-        
-    $Message = "Deleting $Property"
 
     Write-Host "I am trying..."
     Start-Sleep -Milliseconds $Miliseconds
